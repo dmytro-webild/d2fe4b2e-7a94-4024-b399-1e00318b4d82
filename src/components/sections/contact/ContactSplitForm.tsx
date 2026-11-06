@@ -27,6 +27,10 @@ type ContactSplitFormProps = {
   buttonText: string;
   onSubmit?: (data: Record<string, string>) => void;
   textAnimation: "slide-up" | "fade-blur" | "fade";
+  showConsentCheckbox?: boolean;
+  consentText?: string;
+  consentRequired?: boolean;
+  businessNotice?: string;
 } & ({ imageSrc: string; videoSrc?: never } | { videoSrc: string; imageSrc?: never });
 
 const ContactSplitForm = ({
@@ -40,6 +44,10 @@ const ContactSplitForm = ({
   imageSrc,
   videoSrc,
   textAnimation,
+  showConsentCheckbox = false,
+  consentText,
+  consentRequired = true,
+  businessNotice,
 }: ContactSplitFormProps) => {
   const [formData, setFormData] = useState<Record<string, string>>(() => {
     const initial: Record<string, string> = {};
@@ -51,16 +59,25 @@ const ContactSplitForm = ({
     }
     return initial;
   });
+  const [consentChecked, setConsentChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (showConsentCheckbox && consentRequired && !consentChecked) {
+      setError("Please check the express consent box to proceed.");
+      return;
+    }
     setIsLoading(true);
     setError(null);
     try {
-      await sendContactEmail({ formData });
-      onSubmit?.(formData);
+      const submissionData = {
+        ...formData,
+        expressConsentGiven: showConsentCheckbox ? (consentChecked ? "Yes" : "No") : "Not applicable",
+      };
+      await sendContactEmail({ formData: submissionData });
+      onSubmit?.(submissionData);
       const reset: Record<string, string> = {};
       inputs.forEach((input) => {
         reset[input.name] = "";
@@ -69,6 +86,7 @@ const ContactSplitForm = ({
         reset[textarea.name] = "";
       }
       setFormData(reset);
+      setConsentChecked(false);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to send. Please try again.");
     } finally {
@@ -130,10 +148,37 @@ const ContactSplitForm = ({
                   />
                 )}
 
+                {showConsentCheckbox && (
+                  <div className="flex flex-col gap-2 pt-3 border-t border-foreground/15 mt-1">
+                    <label className="flex items-start gap-3 text-xs md:text-sm leading-relaxed opacity-85 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        checked={consentChecked}
+                        onChange={(e) => setConsentChecked(e.target.checked)}
+                        required={consentRequired}
+                        className="mt-1 rounded border-foreground/30 accent-primary cursor-pointer shrink-0 size-4"
+                      />
+                      <span>
+                        {consentText ||
+                          "I provide express consent to receive commercial electronic messages (including project quotes, news, and updates) from TylerBuilds in accordance with Canada's Anti-Spam Legislation (CASL). I understand I can withdraw my consent at any time."}{" "}
+                        <a href="/privacy" className="underline hover:opacity-100 transition-opacity font-medium">
+                          Privacy Policy
+                        </a>
+                      </span>
+                    </label>
+
+                    {businessNotice && (
+                      <p className="text-[11px] md:text-xs opacity-60 leading-tight">
+                        {businessNotice}
+                      </p>
+                    )}
+                  </div>
+                )}
+
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="flex items-center justify-center w-full h-10 px-6 text-sm primary-button text-primary-cta-text rounded cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center justify-center w-full h-10 px-6 text-sm primary-button text-primary-cta-text rounded cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed mt-2"
                 >
                   {isLoading ? "Sending..." : buttonText}
                 </button>

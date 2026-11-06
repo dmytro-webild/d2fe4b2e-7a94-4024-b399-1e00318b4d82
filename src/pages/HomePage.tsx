@@ -1,5 +1,5 @@
 import AboutMediaOverlay from '@/components/sections/about/AboutMediaOverlay';
-import ContactCta from '@/components/sections/contact/ContactCta';
+import ContactSplitForm from '@/components/sections/contact/ContactSplitForm';
 import FaqTwoColumn from '@/components/sections/faq/FaqTwoColumn';
 import FeaturesDetailedSteps from '@/components/sections/features/FeaturesDetailedSteps';
 import FeaturesImageBento from '@/components/sections/features/FeaturesImageBento';
@@ -237,19 +237,44 @@ export default function HomePage() {
 
   <div id="contact" data-section="contact">
     <SectionErrorBoundary name="contact">
-          <ContactCta
-      tag="Contact"
-      text="Ready to build something great? Get in touch today: 289-209-5888 or email hamiltontyler10@gmail.com"
-      primaryButton={{
-        text: "Email Tyler",
-        href: "mailto:hamiltontyler10@gmail.com",
-      }}
-      secondaryButton={{
-        text: "Call Now",
-        href: "tel:2892095888",
-      }}
-      textAnimation="slide-up"
-    />
+      <ContactSplitForm
+        tag="Get In Touch"
+        title="Ready to Build Your Website?"
+        description="Fill out the form below to start your project. We respond to all inquiries within 24 business hours."
+        inputs={[
+          {
+            name: "name",
+            type: "text",
+            placeholder: "Your Full Name",
+            required: true,
+          },
+          {
+            name: "email",
+            type: "email",
+            placeholder: "Email Address",
+            required: true,
+          },
+          {
+            name: "phone",
+            type: "tel",
+            placeholder: "Phone Number (Optional)",
+            required: false,
+          },
+        ]}
+        textarea={{
+          name: "message",
+          placeholder: "Tell us about your project requirements or questions...",
+          required: true,
+          rows: 4,
+        }}
+        buttonText="Send Inquiry"
+        showConsentCheckbox={true}
+        consentText="I provide express consent to receive commercial electronic messages (including project quotes, news, and updates) from TylerBuilds in accordance with Canada's Anti-Spam Legislation (CASL). I understand I can withdraw my consent at any time."
+        consentRequired={true}
+        businessNotice="TylerBuilds • Calgary, AB, Canada • hamiltontyler10@gmail.com • (289) 209-5888"
+        imageSrc="http://img.b2bpic.net/free-photo/analysis-strategy-study-information-business-planning_53876-133682.jpg"
+        textAnimation="slide-up"
+      />
     </SectionErrorBoundary>
   </div>
     </>

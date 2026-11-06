@@ -91,11 +91,11 @@ export default function Layout() {
       links={[
         {
           label: "Privacy Policy",
-          href: "#",
+          href: "/privacy",
         },
         {
           label: "Terms of Service",
-          href: "#",
+          href: "/terms",
         },
       ]}
     />
