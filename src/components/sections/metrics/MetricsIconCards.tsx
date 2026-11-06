@@ -69,9 +69,9 @@ const MetricsIconCards = ({
                   <div className="flex items-center justify-center shrink-0 size-8 primary-button rounded">
                     <IconComponent className="h-2/5 w-2/5 text-primary-cta-text" strokeWidth={1.5} />
                   </div>
-                  <span className="text-xl truncate min-w-0">{metric.title}</span>
+                  <span className="text-xl break-words min-w-0 text-center">{metric.title}</span>
                 </div>
-                <span className="text-9xl md:text-8xl font-semibold leading-none truncate">{metric.value}</span>
+                <span className="text-7xl sm:text-8xl font-semibold leading-none text-center break-words">{metric.value}</span>
               </div>
             );
           })}

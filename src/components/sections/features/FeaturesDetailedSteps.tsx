@@ -76,7 +76,7 @@ const FeaturesDetailedSteps = ({
                     <div className="px-3 py-1 mb-1 text-sm card rounded w-fit">
                       <p>{step.tag}</p>
                     </div>
-                    <h3 className="text-7xl md:text-8xl font-semibold leading-[1.15] text-balance">{step.title}</h3>
+                    <h3 className="text-3xl sm:text-5xl md:text-7xl 2xl:text-8xl font-semibold leading-[1.15] text-balance">{step.title}</h3>
                   </div>
                   <div className="block md:hidden w-full h-px my-5 bg-accent/20" />
                   <div className="flex flex-col gap-2">
