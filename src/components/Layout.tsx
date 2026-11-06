@@ -25,6 +25,10 @@ export default function Layout() {
     "href": "#portfolio"
   },
   {
+    "name": "Pricing",
+    "href": "#pricing"
+  },
+  {
     "name": "Faq",
     "href": "#faq"
   }
@@ -59,6 +63,10 @@ export default function Layout() {
             {
               label: "Development",
               href: "#services",
+            },
+            {
+              label: "Pricing",
+              href: "#pricing",
             },
             {
               label: "Consulting",
