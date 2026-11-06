@@ -57,7 +57,7 @@ const FooterSimple = ({
           <div className="w-full md:w-fit flex flex-wrap gap-y-10 md:gap-12">
             {columns.map((column) => (
               <div key={column.title} className="w-1/2 md:w-auto flex flex-col items-start gap-3">
-                <h3 className="text-sm opacity-50 truncate">{column.title}</h3>
+                <h3 className="text-sm opacity-50 break-words">{column.title}</h3>
                 {column.items.map((item) => (
                   <FooterLinkItem key={item.label} label={item.label} href={item.href} onClick={item.onClick} />
                 ))}

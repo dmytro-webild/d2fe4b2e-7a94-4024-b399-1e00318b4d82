@@ -63,8 +63,8 @@ const MetricsFeatureCards = ({
           {metrics.map((metric) => (
             <div key={metric.value} className="flex flex-col justify-between gap-4 xl:gap-5 2xl:gap-6 p-6 xl:p-7 2xl:p-8 h-full card rounded">
               <div className="flex flex-col gap-0 min-w-0">
-                <span className="text-8xl md:text-7xl font-semibold leading-none truncate">{metric.value}</span>
-                <span className="text-xl truncate">{metric.title}</span>
+                <span className="text-7xl md:text-8xl font-semibold leading-none break-words">{metric.value}</span>
+                <span className="text-xl break-words">{metric.title}</span>
               </div>
 
               <div className="flex flex-col gap-3 pt-5 border-t border-foreground/5">

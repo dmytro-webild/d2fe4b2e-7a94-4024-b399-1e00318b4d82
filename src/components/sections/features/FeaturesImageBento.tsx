@@ -83,9 +83,9 @@ const FeaturesImageBento = ({ tag, title, description, primaryButton, secondaryB
                   className="rounded group-hover:scale-105 transition-transform duration-500"
                 />
 
-                <div className="absolute inset-x-5 bottom-5 xl:inset-x-6 xl:bottom-6 2xl:inset-x-7 2xl:bottom-7 flex flex-col text-background">
-                  <span className="text-2xl font-semibold leading-snug truncate">{item.title}</span>
-                  <span className="text-base leading-snug truncate">{item.description}</span>
+                <div className="absolute inset-x-0 bottom-0 p-5 xl:p-6 2xl:p-7 flex flex-col bg-gradient-to-t from-black/85 via-black/50 to-transparent text-white">
+                  <span className="text-xl md:text-2xl font-semibold leading-snug break-words">{item.title}</span>
+                  <span className="text-sm md:text-base leading-snug break-words opacity-90">{item.description}</span>
                 </div>
               </div>
             );

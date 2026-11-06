@@ -67,8 +67,8 @@ const TestimonialQuoteCards = ({
               </div>
 
               <div className="flex flex-col">
-                <span className="text-2xl font-semibold leading-snug truncate">{testimonial.name}</span>
-                <span className="text-base leading-snug opacity-75 truncate">{testimonial.role}</span>
+                <span className="text-2xl font-semibold leading-snug break-words">{testimonial.name}</span>
+                <span className="text-base leading-snug opacity-75 break-words">{testimonial.role}</span>
               </div>
 
               <p className="text-lg leading-snug">{testimonial.quote}</p>
