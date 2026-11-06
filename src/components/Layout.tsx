@@ -16,14 +16,6 @@ export default function Layout() {
     "href": "#services"
   },
   {
-    "name": "Testimonials",
-    "href": "#testimonials"
-  },
-  {
-    "name": "Hero",
-    "href": "#hero"
-  },
-  {
     "name": "Metrics",
     "href": "#metrics"
   },
