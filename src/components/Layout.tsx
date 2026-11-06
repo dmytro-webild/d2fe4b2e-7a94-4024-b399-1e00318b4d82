@@ -2,6 +2,7 @@ import FooterSimple from '@/components/sections/footer/FooterSimple';
 import NavbarCentered from '@/components/ui/NavbarCentered';
 import SectionErrorBoundary from "@/components/ui/SectionErrorBoundary";
 import SiteBackgroundSlot from "@/components/ui/SiteBackgroundSlot";
+import CookieConsentBanner from "@/components/ui/CookieConsentBanner";
 import { Outlet } from 'react-router-dom';
 import { StyleProvider } from "@/components/ui/StyleProvider";
 
@@ -89,9 +90,16 @@ export default function Layout() {
           label: "Terms of Service",
           href: "/terms",
         },
+        {
+          label: "Cookie Preferences",
+          onClick: () => {
+            window.dispatchEvent(new CustomEvent("open-cookie-preferences"));
+          },
+        },
       ]}
     />
       </SectionErrorBoundary>
+      <CookieConsentBanner />
     </StyleProvider>
   );
 }
