@@ -23,6 +23,7 @@ const PricingHighlightedCards = ({
   secondaryButton,
   plans,
   textAnimation,
+  note,
 }: {
   tag: string;
   title: string;
@@ -31,6 +32,7 @@ const PricingHighlightedCards = ({
   secondaryButton?: { text: string; href: string };
   plans: PricingPlan[];
   textAnimation: "slide-up" | "fade-blur" | "fade";
+  note?: string;
 }) => (
   <section aria-label="Pricing section" className="py-20">
     <div className="flex flex-col gap-8 md:gap-10">
@@ -75,6 +77,7 @@ const PricingHighlightedCards = ({
                 <div className="flex flex-col gap-1">
                   <span className="text-5xl md:text-6xl font-semibold">{plan.price}</span>
                   <span className="text-base font-medium">{plan.tag}</span>
+                  {plan.description && <span className="text-sm opacity-80">{plan.description}</span>}
                 </div>
 
                 <div className="h-px w-full bg-foreground/20" />
@@ -99,6 +102,14 @@ const PricingHighlightedCards = ({
           ))}
         </GridOrCarousel>
       </ScrollReveal>
+
+      {note && (
+        <div className="flex justify-center w-content-width mx-auto">
+          <p className="text-center text-sm md:text-base text-foreground/80 card px-6 py-3 rounded font-medium">
+            {note}
+          </p>
+        </div>
+      )}
     </div>
   </section>
 );

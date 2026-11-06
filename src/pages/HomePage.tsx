@@ -5,6 +5,7 @@ import FeaturesDetailedSteps from '@/components/sections/features/FeaturesDetail
 import FeaturesImageBento from '@/components/sections/features/FeaturesImageBento';
 import HeroSplitMediaGrid from '@/components/sections/hero/HeroSplitMediaGrid';
 import MetricsMediaCards from '@/components/sections/metrics/MetricsMediaCards';
+import PricingHighlightedCards from '@/components/sections/pricing/PricingHighlightedCards';
 import SectionErrorBoundary from "@/components/ui/SectionErrorBoundary";
 
 export default function HomePage() {
@@ -159,6 +160,66 @@ export default function HomePage() {
       ]}
       textAnimation="slide-up"
     />
+    </SectionErrorBoundary>
+  </div>
+
+  <div id="pricing" data-section="pricing">
+    <SectionErrorBoundary name="pricing">
+      <PricingHighlightedCards
+        tag="Pricing"
+        title="Simple, Transparent Pricing"
+        description="Choose the project plan that fits your vision and goals. Clear pricing with zero hidden fees."
+        plans={[
+          {
+            tag: "Small Projects",
+            price: "$500",
+            description: "Landing pages, simple portfolios, and small sites.",
+            features: [
+              "Custom Responsive Design",
+              "Up to 3 Main Pages / Sections",
+              "Speed & SEO Optimization",
+              "Contact Form Integration",
+            ],
+            primaryButton: {
+              text: "Get Started",
+              href: "#contact",
+            },
+          },
+          {
+            tag: "Medium Projects",
+            price: "$750",
+            description: "Growing business sites and multi-page applications.",
+            highlight: "Most Popular",
+            features: [
+              "Custom Design & Layouts",
+              "Up to 7 Pages / Complex Layouts",
+              "Advanced Forms & Analytics",
+              "Priority Support & Revisions",
+            ],
+            primaryButton: {
+              text: "Get Started",
+              href: "#contact",
+            },
+          },
+          {
+            tag: "Large Projects",
+            price: "$1,000",
+            description: "Complex web platforms, e-commerce, or full custom builds.",
+            features: [
+              "Comprehensive Multi-Page Site",
+              "Custom Web Functionality",
+              "Full E-Commerce / API Integration",
+              "Dedicated Launch & Ongoing Support",
+            ],
+            primaryButton: {
+              text: "Get Started",
+              href: "#contact",
+            },
+          },
+        ]}
+        note="Note: All options include an additional $150 maintenance fee."
+        textAnimation="slide-up"
+      />
     </SectionErrorBoundary>
   </div>
 
