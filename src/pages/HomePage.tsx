@@ -5,7 +5,6 @@ import FeaturesDetailedSteps from '@/components/sections/features/FeaturesDetail
 import FeaturesImageBento from '@/components/sections/features/FeaturesImageBento';
 import HeroSplitMediaGrid from '@/components/sections/hero/HeroSplitMediaGrid';
 import MetricsMediaCards from '@/components/sections/metrics/MetricsMediaCards';
-import TestimonialQuoteCards from '@/components/sections/testimonial/TestimonialQuoteCards';
 import SectionErrorBoundary from "@/components/ui/SectionErrorBoundary";
 
 export default function HomePage() {
@@ -159,49 +158,6 @@ export default function HomePage() {
         },
       ]}
       textAnimation="slide-up"
-    />
-    </SectionErrorBoundary>
-  </div>
-
-  <div id="testimonials" data-section="testimonials">
-    <SectionErrorBoundary name="testimonials">
-          <TestimonialQuoteCards
-      tag="Testimonials"
-      title="Happy Clients"
-      description="Hear what our partners have to say."
-      testimonials={[
-        {
-          name: "Sarah Miller",
-          role: "CEO, FashionBrand",
-          quote: "Tyler delivered an incredible e-commerce site for my brand. Sales doubled immediately.",
-          imageSrc: "http://img.b2bpic.net/free-photo/african-man-black-suit_1157-46903.jpg",
-        },
-        {
-          name: "Mark Chen",
-          role: "Founder, TechStart",
-          quote: "The development speed and quality of work are unmatched. Highly recommended.",
-          imageSrc: "http://img.b2bpic.net/free-photo/side-view-woman-working-indoors_23-2149915936.jpg",
-        },
-        {
-          name: "Elena Rodriguez",
-          role: "Creative Lead",
-          quote: "Finally found a partner who understands design aesthetics as much as the code.",
-          imageSrc: "http://img.b2bpic.net/free-photo/front-view-smiley-man-outdoors_23-2149915911.jpg",
-        },
-        {
-          name: "David Smith",
-          role: "Owner, Bistro",
-          quote: "Simple, elegant, and effective. My restaurant booking increased significantly.",
-          imageSrc: "http://img.b2bpic.net/free-photo/worker-with-big-smile-crossed-arms_1139-248.jpg",
-        },
-        {
-          name: "Jessica Lee",
-          role: "Marketing Dir",
-          quote: "Outstanding work! Professional and highly communicative.",
-          imageSrc: "http://img.b2bpic.net/free-photo/young-employee-with-glasses-paying-attention_1098-4084.jpg",
-        },
-      ]}
-      textAnimation="fade-blur"
     />
     </SectionErrorBoundary>
   </div>
