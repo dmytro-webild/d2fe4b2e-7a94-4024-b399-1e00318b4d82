@@ -61,19 +61,19 @@ const MetricsFeatureCards = ({
       <ScrollReveal variant="fade">
         <GridOrCarousel>
           {metrics.map((metric) => (
-            <div key={metric.value} className="flex flex-col justify-between gap-4 xl:gap-5 2xl:gap-6 p-6 xl:p-7 2xl:p-8 h-full card rounded">
-              <div className="flex flex-col gap-0 min-w-0">
-                <span className="text-7xl md:text-8xl font-semibold leading-none break-words">{metric.value}</span>
-                <span className="text-xl break-words">{metric.title}</span>
+            <div key={metric.value} className="flex flex-col justify-between gap-4 xl:gap-5 2xl:gap-6 p-6 xl:p-7 2xl:p-8 h-full card rounded overflow-hidden min-w-0">
+              <div className="flex flex-col gap-1 min-w-0">
+                <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-none break-words min-w-0">{metric.value}</span>
+                <span className="text-lg md:text-xl font-medium break-words min-w-0">{metric.title}</span>
               </div>
 
-              <div className="flex flex-col gap-3 pt-5 border-t border-foreground/5">
+              <div className="flex flex-col gap-3 pt-5 border-t border-foreground/10 min-w-0">
                 {metric.features.map((feature) => (
-                  <div key={feature} className="flex items-start gap-3">
-                    <div className="flex items-center justify-center shrink-0 size-6 primary-button rounded">
+                  <div key={feature} className="flex items-start gap-3 min-w-0">
+                    <div className="flex items-center justify-center shrink-0 size-6 primary-button rounded mt-0.5">
                       <Check className="size-3 text-primary-cta-text" strokeWidth={2} />
                     </div>
-                    <span className="text-sm leading-snug">{feature}</span>
+                    <span className="text-sm leading-snug break-words min-w-0">{feature}</span>
                   </div>
                 ))}
               </div>

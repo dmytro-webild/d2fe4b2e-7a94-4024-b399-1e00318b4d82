@@ -59,9 +59,9 @@ const MetricsSimpleCards = ({
       <ScrollReveal variant="fade">
         <GridOrCarousel>
           {metrics.map((metric) => (
-            <div key={metric.value} className="flex flex-col justify-between gap-6 p-6 md:p-10 min-h-60 md:min-h-70 2xl:min-h-80 h-full card rounded">
-              <span className="text-7xl md:text-8xl font-semibold leading-none break-words">{metric.value}</span>
-              <p className="text-base leading-snug text-balance">{metric.description}</p>
+            <div key={metric.value} className="flex flex-col justify-between gap-6 p-6 md:p-10 min-h-60 md:min-h-70 2xl:min-h-80 h-full card rounded overflow-hidden min-w-0">
+              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-none break-words min-w-0">{metric.value}</span>
+              <p className="text-sm sm:text-base leading-snug break-words min-w-0">{metric.description}</p>
             </div>
           ))}
         </GridOrCarousel>
