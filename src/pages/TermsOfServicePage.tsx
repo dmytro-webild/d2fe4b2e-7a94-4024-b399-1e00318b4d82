@@ -86,7 +86,7 @@ export default function TermsOfServicePage() {
         },
         {
           type: "paragraph" as const,
-          text: "You irrevocably agree that the courts of the Province of Alberta located in Calgary shall have exclusive jurisdiction to hear and decide any suit, action, or proceeding arising out of or related to these Terms.",
+          text: "You irrevocably agree that the courts of the Province of Alberta located in Edmonton shall have exclusive jurisdiction to hear and decide any suit, action, or proceeding arising out of or related to these Terms.",
         },
       ],
     },
@@ -115,7 +115,7 @@ export default function TermsOfServicePage() {
           items: [
             "TylerBuilds",
             "Attention: Tyler Hamilton",
-            "Location: Calgary, Alberta, Canada",
+            "Location: Edmonton, Alberta, Canada",
             "Email: hamiltontyler10@gmail.com",
             "Phone: (289) 209-5888",
           ],

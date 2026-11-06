@@ -227,7 +227,7 @@ export default function HomePage() {
         showConsentCheckbox={true}
         consentText="I provide express consent to receive commercial electronic messages (including project quotes, news, and updates) from TylerBuilds in accordance with Canada's Anti-Spam Legislation (CASL). I understand I can withdraw my consent at any time."
         consentRequired={true}
-        businessNotice="TylerBuilds • Calgary, AB, Canada • hamiltontyler10@gmail.com • (289) 209-5888"
+        businessNotice="TylerBuilds • Edmonton, AB, Canada • hamiltontyler10@gmail.com • (289) 209-5888"
         imageSrc="http://img.b2bpic.net/free-photo/analysis-strategy-study-information-business-planning_53876-133682.jpg?_wi=2"
         textAnimation="slide-up"
       />

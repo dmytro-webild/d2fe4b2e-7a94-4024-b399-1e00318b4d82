@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
           items: [
             "Privacy Officer: Tyler Hamilton",
             "Business Name: TylerBuilds",
-            "Location: Calgary, Alberta, Canada",
+            "Location: Edmonton, Alberta, Canada",
             "Email: hamiltontyler10@gmail.com",
             "Phone: (289) 209-5888",
           ],
