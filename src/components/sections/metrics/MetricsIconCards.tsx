@@ -64,14 +64,14 @@ const MetricsIconCards = ({
           {metrics.map((metric) => {
             const IconComponent = resolveIcon(metric.icon);
             return (
-              <div key={metric.value} className="flex flex-col items-center justify-center gap-3 xl:gap-3.5 2xl:gap-4 p-6 xl:p-7 2xl:p-8 min-h-70 xl:min-h-80 2xl:min-h-90 h-full card rounded">
-                <div className="flex items-center justify-center gap-2 min-w-0">
+              <div key={metric.value} className="flex flex-col items-center justify-center gap-3 xl:gap-3.5 2xl:gap-4 p-6 xl:p-7 2xl:p-8 min-h-60 xl:min-h-70 h-full card rounded overflow-hidden min-w-0">
+                <div className="flex items-center justify-center gap-2 min-w-0 max-w-full">
                   <div className="flex items-center justify-center shrink-0 size-8 primary-button rounded">
                     <IconComponent className="h-2/5 w-2/5 text-primary-cta-text" strokeWidth={1.5} />
                   </div>
-                  <span className="text-xl break-words min-w-0 text-center">{metric.title}</span>
+                  <span className="text-lg md:text-xl font-medium break-words min-w-0 text-center">{metric.title}</span>
                 </div>
-                <span className="text-7xl sm:text-8xl font-semibold leading-none text-center break-words">{metric.value}</span>
+                <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-none text-center break-words min-w-0">{metric.value}</span>
               </div>
             );
           })}

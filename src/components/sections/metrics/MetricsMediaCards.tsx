@@ -69,24 +69,22 @@ const MetricsMediaCards = ({
             <ScrollReveal
               variant="fade"
               key={metric.value + metric.title}
-              className={cls("grid grid-cols-1 sm:grid-cols-2 gap-5", shouldSpanFull && "md:col-span-2")}
+              className={cls("grid grid-cols-1 sm:grid-cols-2 gap-5 items-stretch", shouldSpanFull && "md:col-span-2")}
             >
               <div className={cls(
-                "flex flex-col justify-between gap-4 xl:gap-5 2xl:gap-6 p-6 xl:p-7 2xl:p-8 card rounded min-h-56 sm:min-h-0",
-                shouldSpanFull ? "sm:aspect-square md:aspect-video" : "sm:aspect-square",
+                "flex flex-col justify-between gap-4 xl:gap-5 p-6 xl:p-7 2xl:p-8 card rounded overflow-hidden min-h-[220px] sm:min-h-[250px] h-full min-w-0",
                 isEven && "order-2 sm:order-1"
               )}>
-                <span className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight break-words">{metric.value}</span>
-                <div className="flex flex-col gap-2 min-w-0">
-                  <span className="text-xl md:text-2xl font-semibold leading-snug break-words">{metric.title}</span>
-                  <div className="w-full h-px bg-accent" />
-                  <p className="text-base leading-snug break-words">{metric.description}</p>
+                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight break-words min-w-0">{metric.value}</span>
+                <div className="flex flex-col gap-2 min-w-0 mt-auto">
+                  <span className="text-lg sm:text-xl md:text-2xl font-semibold leading-snug break-words min-w-0">{metric.title}</span>
+                  <div className="w-full h-px bg-accent/50" />
+                  <p className="text-sm sm:text-base leading-snug break-words min-w-0">{metric.description}</p>
                 </div>
               </div>
 
               <div className={cls(
-                "rounded overflow-hidden min-h-48 sm:min-h-0",
-                shouldSpanFull ? "aspect-video" : "aspect-square",
+                "rounded overflow-hidden min-h-[200px] sm:min-h-0 aspect-video sm:aspect-auto h-full w-full",
                 isEven && "order-1 sm:order-2"
               )}>
                 <ImageOrVideo imageSrc={metric.imageSrc} videoSrc={metric.videoSrc} />
